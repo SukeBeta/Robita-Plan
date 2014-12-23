@@ -1,18 +1,25 @@
 [{
-	"name": "Wolf",
-	"age": "19",
-	"title": "eat chicken",
-	"content": "I love eat chicken"
+	"sub_todo": "新增内容",
+  	"detail_todo": [
+	  "首页的panel 点击 needs help时 做个卡牌翻转效果",
+	  "给diary editor增加一个翻页hotkey"
+	]
 },
 {
-	"name": "Hosoke",
-	"age": "21",
-	"title": "Love angular",
-	"content": "I can use angular"
+	"sub_todo": "修改",
+	"detail_todo": [
+	  "标题字体字号设置为 文章标题",
+	  "所有动画的曲线调整下",
+	  "tooltips增加个transition",
+	  "文本area光标的样式修改 为 首页的logo的光标样式"
+	]
 },
 {
-	"name": "Nick",
-	"age": "23",
-	"title": "Building Game",
-	"content": "I always write HTML5 games"
+	"sub_todo": "BUG",
+	"detail_todo": [
+	  "FireFox的flip_panel效果失效",
+	  "Safari自定义滚动条的高度不能在初始化页面时自动更新",
+	  "QR_CODE 在点击down, canel时反复出现",
+	  "FireFox的flip_panel效果失效"
+  ]
 }]

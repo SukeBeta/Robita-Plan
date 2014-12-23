@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <title>Angular Template</title>
+    <title>Plan for SukeBeta</title>
     <!-- material css -->
     <link rel="stylesheet" href="vendor/angular-material.min.css">
 
@@ -28,7 +28,63 @@
     <script src="app/app.js"></script>
 
 </head>
-<body ng-app="angularTemplate" ng-controller="angularTemplateCtrl">
+<body ng-app="planApp" ng-controller="planAppCtrl">
+<div class="wrapper" ng-controller="sidebarCtrl">
+    <!-- header -->
+    <md-toolbar class="header" md-scroll-shrink>
+        <div class="md-toolbar-tools">
+            <h1 class="header-logo">
+                Plan<small>for SukeBeta</small>
+            </h1>
+            <div class="header-task-name">
+                Plan list
+            </div>
+        </div>
+    </md-toolbar> <!-- end header -->
 
+    <!-- sidebar -->
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+        <md-content class="md-padding" ng-controller="sidebarCtrl">
+            <md-button ng-click="close()" class="md-primary">
+                Close Sidenav Left
+            </md-button>
+        </md-content>
+    </md-sidenav> <!-- end sidebar -->
+
+    <!-- todo list -->
+    <div class="todo-list" ng-controller="todoListCtrl">
+        <md-content>
+            <md-list>
+                <md-item class="item" ng-repeat="todo in todoData">
+                    <!-- todo -->
+                    <md-item-content class="item-content">
+                        <div class="md-tile-content" layout="row" layout-align="start center">
+                            <md-checkbox></md-checkbox>
+                            <div flex>
+                                <div layout="row">
+                                    <h3 class="todo-name" flex>{{todo.sub_todo}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </md-item-content> <!-- end todo-->
+
+                    <!-- todo detail -->
+                    <ul class="detail">
+                        <li class="detail-item" ng-repeat="detail in todo.detail_todo track by $index" layout="row" layout-align="start center">
+                            <md-checkbox></md-checkbox>
+                            <p class="detail-name" flex>{{detail}}</p>
+                            <md-button class="md-raised md-warn detail-btn-remove">Remove</md-button>
+                        </li>
+                    </ul>
+                    <div class="detail-add">
+                        <input type="text" name="" placeholder="Add new detail todo.." class="detail-add-input"/>
+                    </div><!-- end todo detail -->
+
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-item>
+            </md-list>
+        </md-content>
+    </div><!-- end todo list -->
+</div>
 </body>
 </html>

@@ -14,6 +14,9 @@
   font-family: 'Open Sans', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
+.fs10 {
+  font-size: 0.625em;
+}
 .fs12 {
   font-size: 0.75em;
 }
@@ -23,7 +26,6 @@
 .fs16 {
   font-size: 1em;
 }
-
 .fs18 {
   font-size: 1.125em;
 }
@@ -33,8 +35,133 @@
 
 /* =============== Global =============== */
 html, body {
+  overflow: scroll;
   height: 100%;
+  background: #333;
 }
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1024px;
+  padding-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  position: relative;
+}
+
+/* =============== Header =============== */
+.header {
+  .header-logo {
+    small {
+      margin-left: 5px;
+      .fs10;
+      opacity: .6;
+    }
+  }
+}
+
+.header-task-name {
+  width: 100%;
+  line-height: 64px;
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  left: 0;
+}
+
+.sidebar {
+  position: relative;
+}
+
+/* =============== todo-list =============== */
+.todo-list {
+  position: relative;
+
+  md-content.todo-content {
+    height: 700px;
+  }
+
+  .md-tile-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .item {
+    md-checkbox {
+      margin: 15px 10px;
+    }
+
+    md-subheader {
+      background: #fff;
+    }
+
+    .todo-name {
+      font-size: 2em;
+      font-weight: bold;
+      margin: 4px 0 0 0;
+      color: #03a9f4;
+    }
+
+    md-divider {
+      margin-top: 40px;
+    }
+  }
+}
+
+
+
+/* =============== detail-list =============== */
+.detail {
+  padding-left: 0;
+  margin-top: 8px;
+  border-top: 1px dashed #ddd;
+
+  li:nth-child(2) {
+    background: #fdfdfd;
+  }
+}
+
+.detail-item {
+  padding-left: 50px;
+  margin: 8px 0;
+  cursor: pointer;
+
+  .md-container {
+    top: 0;
+  }
+}
+
+.detail-item:hover .detail-btn-remove {
+  opacity: 1;
+}
+
+.detail-btn-remove {
+  opacity: 0;
+  height: 28px;
+  margin-right: 15px;
+  .fs12;
+
+  .transition(all, .4s);
+}
+
+.detail-add {
+  margin: 15px 15px 15px 50px;
+}
+.detail-add-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 18px;
+  padding: 11px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 
 /* =============== Footer =============== */
 
